@@ -1,14 +1,18 @@
-$grey: #f0f0f0;
-$grey-dark: #282828;
-$blue: #007ec3;
-$orange: #ef7d00;
+// Variables
 
-$text-color: #282828;
-$primary: #007ec3;
-$secondary: #ef7d00;
+// WIDTH
+$canvas-width: 1280px;
+$canvas-height: 720px;
+$gap: 8px;
 
-$roxo: #c7b2ce;
-$amarelo: #f7c044;
-$amarelo-claro: #ede0b0;
-$verde: #97e657;
-$vermelho: #f86d66;
+//COLORS
+$green: #8ea52d;
+$blue: #28a3d7;
+$grey: #505050;
+
+//Interface
+$border-color: $grey;
+$btn-green: $green;
+$btn-green-hover: #7b9318;
+$btn-blue: $blue;
+$btn-border: $grey;

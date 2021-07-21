@@ -1,0 +1,15 @@
+.btn {
+  @include flex-center;
+  &.btn {
+    &--borded {
+      background-color: white;
+      border: 3px solid $btn-border;
+      min-width: 50px;
+      min-height: 50px;
+
+      &.rounded {
+        border-radius: 15px;
+      }
+    }
+  }
+}
