@@ -1,5 +1,11 @@
 <template>
-  <section class="container"></section>
+  <section class="container">
+    <!-- <InitialPage :is-showed="true"></InitialPage> -->
+    <button class="btn btn--primary">
+      Conferir Resposta
+    </button>
+    <StepController></StepController>
+  </section>
 </template>
 <script>
 export default {}

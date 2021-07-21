@@ -1,17 +1,12 @@
 import LoadingScreen from '@/components/LoadingScreen.vue'
-// import ListObjects from '@/components/ListObjects.vue'
-// import Drag from '@/components/Drag.vue'
-// import Drop from '@/components/Drop.vue'
-// import PopUp from '@/components/PopUp.vue'
+import StepController from '@/components/layout/StepController.vue'
+import InitialPage from '@/components/InitialPage.vue'
 
 const Components = {
   install: (Vue) => {
     Vue.component('LoadingScreen', LoadingScreen)
-
-    // Vue.component('Drga', Drag)
-    // Vue.component('Drop', Drop)
-    // Vue.component('PopUp', PopUp)
-    // Vue.component('ListObjects', ListObjects)
+    Vue.component('StepController', StepController)
+    Vue.component('InitialPage', InitialPage)
   }
 }
 

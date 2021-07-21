@@ -126,3 +126,7 @@ button:focus {
 * {
   font-family: Confortaa;
 }
+
+:root {
+  font-size: 14px;
+}

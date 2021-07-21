@@ -1,15 +1,57 @@
 .btn {
   @include flex-center;
+
   &.btn {
     &--borded {
       background-color: white;
       border: 3px solid $btn-border;
       min-width: 50px;
       min-height: 50px;
+      box-shadow: $bs-hard-mini;
 
       &.rounded {
         border-radius: 15px;
       }
+
+      &.circle {
+        border-radius: 50%;
+      }
+
+      &.green {
+        background-color: $btn-green;
+        &:hover {
+          background-color: $btn-green-hover;
+        }
+      }
     }
+    &--primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: $gap * 2 $gap * 3;
+      border-radius: $gap * 4;
+      background-color: $btn-green;
+      border: 4px solid white;
+      color: white;
+      font-weight: bold;
+      box-shadow: $bs-hard;
+
+      .btn-icon {
+        &.left {
+          margin-right: $gap * 2;
+        }
+        &.right {
+          margin-left: $gap * 2;
+        }
+      }
+      &:hover {
+        background-color: $btn-green-hover;
+      }
+    }
+  }
+  &:disabled,
+  &[disabled] {
+    opacity: 0.4;
+    cursor: not-allowed;
   }
 }

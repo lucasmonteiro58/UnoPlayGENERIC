@@ -21,6 +21,14 @@
   /* Standard syntax */
 }
 
+@mixin fill-canvas() {
+  width: $canvas-width;
+  height: $canvas-height;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 @mixin embed_image($url, $width, $height) {
   width: $width;
   height: $height;
