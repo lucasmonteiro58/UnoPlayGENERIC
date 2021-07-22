@@ -4,6 +4,7 @@
 $canvas-width: 1280px;
 $canvas-height: 720px;
 $gap: 8px;
+$b-radius: 40px;
 
 //COLORS
 $green: #8ea52d;
@@ -14,6 +15,7 @@ $grey: #505050;
 $border-color: $grey;
 $btn-green: $green;
 $btn-green-hover: #7b9318;
+$btn-green-active: hsl(72, 70%, 28%);
 $btn-blue: $blue;
 $btn-border: $grey;
 

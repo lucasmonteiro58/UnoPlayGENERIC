@@ -11,6 +11,7 @@
 
       &.rounded {
         border-radius: 15px;
+        min-height: 47px;
       }
 
       &.circle {
@@ -47,11 +48,20 @@
       &:hover {
         background-color: $btn-green-hover;
       }
+      &:active {
+        background-color: $btn-green-active;
+      }
+    }
+    &--icon {
+      cursor: pointer;
+      background-color: transparent;
+      width: 30px;
+      height: 30px;
     }
   }
   &:disabled,
   &[disabled] {
     opacity: 0.4;
-    cursor: not-allowed;
+    cursor: initial;
   }
 }

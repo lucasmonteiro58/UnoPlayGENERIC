@@ -1,10 +1,17 @@
 <template>
-  <div class="stage-wrap">
+  <div ref="" class="stage-wrap">
     <loading-screen id="loading-screen" />
     <div :class="background" class="background-image"></div>
     <div ref="dropdownMenu" class="menu-section">
       <button class="btn btn--borded rounded" @click.prevent="toogleMenu">
-        =
+        <div
+          class="hamburger hamburger--squeeze"
+          :class="{ 'is-active': isVisibleMenu }"
+        >
+          <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+          </div>
+        </div>
       </button>
       <transition
         enter-active-class="transition-in-b-r"
@@ -16,11 +23,11 @@
             <div class="icon">@</div>
             <div class="label">Início</div>
           </div>
-          <div class="menu-item">
+          <div class="menu-item" @click="toogleFullScreen">
             <div class="icon">@</div>
             <div class="label">Tela cheia</div>
           </div>
-          <div class="menu-item">
+          <div class="menu-item" @click="openCreditos">
             <div class="icon">@</div>
             <div class="label">Créditos</div>
           </div>
@@ -32,6 +39,11 @@
       </transition>
     </div>
     <nuxt id="stage-container" class="stage-container" />
+    <PopUpCreditos
+      v-if="isVisibleCreditos"
+      :is-showed="isVisibleCreditos"
+      @close="closeCreditos"
+    ></PopUpCreditos>
   </div>
 </template>
 
@@ -39,7 +51,9 @@
 export default {
   data() {
     return {
-      isVisibleMenu: false
+      isVisibleMenu: false,
+      isFullScreen: false,
+      isVisibleCreditos: false
     }
   },
   computed: {
@@ -66,6 +80,40 @@ export default {
       console.log(el, target)
       if (el !== target && !el.contains(target)) {
         this.closeMenu()
+      }
+    },
+    toogleFullScreen() {
+      if (this.isFullScreen) this.closeFullscreen()
+      else this.openFullscreen()
+    },
+    openCreditos() {
+      this.isVisibleMenu = false
+      this.isVisibleCreditos = true
+    },
+    closeCreditos() {
+      this.isVisibleCreditos = false
+    },
+    openFullscreen() {
+      const elem = document.documentElement
+      this.isFullScreen = true
+      this.isVisibleMenu = false
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen()
+      } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen()
+      } else if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen()
+      }
+    },
+    closeFullscreen() {
+      if (document.exitFullscreen) {
+        this.isFullScreen = false
+        this.isVisibleMenu = false
+        document.exitFullscreen()
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen()
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen()
       }
     }
   }
@@ -115,7 +163,7 @@ export default {
     min-height: 300px;
     background-color: white;
     border: 3px solid $btn-border;
-    border-radius: 0 40px 40px 40px;
+    border-radius: 0 $b-radius $b-radius $b-radius;
     padding: $gap * 2;
 
     .menu-title {
