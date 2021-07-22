@@ -77,7 +77,6 @@ export default {
     documentClick(e) {
       const el = this.$refs.dropdownMenu
       const target = e.target
-      console.log(el, target)
       if (el !== target && !el.contains(target)) {
         this.closeMenu()
       }

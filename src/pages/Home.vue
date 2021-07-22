@@ -5,6 +5,7 @@
       Conferir Resposta
     </button>
     <StepController></StepController>
+    <!-- <PopUpObjetivos :is-showed="true"></PopUpObjetivos> -->
   </section>
 </template>
 <script>
