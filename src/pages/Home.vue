@@ -6,6 +6,7 @@
     </button>
     <StepController></StepController>
     <!-- <PopUpObjetivos :is-showed="true"></PopUpObjetivos> -->
+    <SteperLine></SteperLine>
   </section>
 </template>
 <script>
