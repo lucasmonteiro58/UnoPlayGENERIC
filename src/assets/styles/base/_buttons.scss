@@ -37,6 +37,7 @@
       font-weight: bold;
       box-shadow: $bs-hard;
       text-transform: uppercase;
+      text-align: center;
 
       .btn-icon {
         &.left {
@@ -46,6 +47,11 @@
           margin-left: $gap * 2;
         }
       }
+
+      &.fixed-width {
+        padding: $gap * 2 0;
+      }
+
       &:hover {
         background-color: $btn-green-hover;
       }
@@ -64,5 +70,8 @@
   &[disabled] {
     opacity: 0.4;
     cursor: initial;
+    &:hover {
+      background-color: $btn-green;
+    }
   }
 }

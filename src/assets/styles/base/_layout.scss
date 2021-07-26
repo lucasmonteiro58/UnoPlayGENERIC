@@ -2,4 +2,8 @@ body {
   @include sprites($spritesheet-sprites);
 }
 
-//-------------------- animation
+// ---- class auxiliares
+
+.w170 {
+  width: 170px;
+}
