@@ -1,0 +1,8 @@
+.card {
+  &--rounded {
+    background-color: $card-background;
+    width: 800px;
+    height: 350px;
+    border-radius: 50px;
+  }
+}

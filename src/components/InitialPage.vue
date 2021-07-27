@@ -24,7 +24,7 @@ export default {
     },
     background: {
       type: String,
-      default: ''
+      default: 'default-background'
     },
     isShowed: {
       type: Boolean,
@@ -83,6 +83,7 @@ export default {
 <style lang="scss" scoped>
 .initial-page {
   @include fill-canvas;
+  z-index: 1;
 
   // .slot {
   //   @include fill-canvas;
@@ -92,6 +93,12 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
+  }
+
+  .default-background {
+    width: $canvas-width;
+    height: $canvas-height;
+    background-color: blueviolet;
   }
 
   .btn-comecar {

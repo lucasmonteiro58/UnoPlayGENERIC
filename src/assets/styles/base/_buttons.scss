@@ -1,5 +1,6 @@
 .btn {
   @include flex-center;
+  transition: 0.3s;
 
   &.btn {
     &--borded {
@@ -23,6 +24,11 @@
         &:hover {
           background-color: $btn-green-hover;
         }
+      }
+
+      &:disabled,
+      &[disabled] {
+        background-color: white;
       }
     }
     &--primary {
@@ -58,6 +64,11 @@
       &:active {
         background-color: $btn-green-active;
       }
+
+      &:disabled,
+      &[disabled] {
+        background-color: $btn-green;
+      }
     }
     &--icon {
       cursor: pointer;
@@ -70,8 +81,5 @@
   &[disabled] {
     opacity: 0.4;
     cursor: initial;
-    &:hover {
-      background-color: $btn-green;
-    }
   }
 }

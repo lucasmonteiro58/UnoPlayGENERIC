@@ -125,16 +125,14 @@
     transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-//-------------
+//--- Menu animation
 
 @keyframes square-in-bottom-right {
   from {
-    // clip-path: inset(0 100% 100% 0);
     opacity: 0;
     transform: translateX(-60px);
   }
   to {
-    // clip-path: inset(0 0 0 0);
     opacity: 1;
     transform: translateX(0px);
   }
@@ -146,12 +144,10 @@
 
 @keyframes square-out-top-left {
   from {
-    // clip-path: inset(0 0 0 0);
     opacity: 1;
     transform: translateX(0px);
   }
   to {
-    // clip-path: inset(0 100% 100% 0);
     transform: translateX(-60px);
     opacity: 0;
   }
@@ -159,4 +155,83 @@
 
 .transition-out-t-l {
   animation: 0.3s ease square-out-top-left both;
+}
+
+/**
+* Card animation
+*/
+
+@keyframes translate200-in {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes translate200-out {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+}
+
+@keyframes translate60-out {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+}
+
+@keyframes translate-200-in {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes translate-200-out {
+  from {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-200px);
+  }
+}
+
+.fade-left-enter-active {
+  animation: 0.5s ease translate200-in both;
+}
+
+.fade-right-enter-active {
+  animation: 0.5s ease translate-200-in both;
+}
+
+/**
+* Initial Page animation
+*/
+
+.initial-enter {
+  animation: 0.5s ease translate200-in both;
+}
+
+.initial-leave {
+  animation: 0.3s ease translate60-out both;
 }

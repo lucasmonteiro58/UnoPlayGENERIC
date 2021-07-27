@@ -1,5 +1,6 @@
 export const state = () => ({
   currentBackground: null,
+  initialPageState: true,
   soundState: true
 })
 
@@ -9,5 +10,8 @@ export const mutations = {
   },
   changeSoundState(state, newSound) {
     state.soundState = newSound
+  },
+  changeInitialPageState(state, newState) {
+    state.initialPageState = newState
   }
 }

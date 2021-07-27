@@ -19,7 +19,7 @@
       >
         <div v-if="isVisibleMenu" class="menu-expand">
           <div class="menu-title">Menu</div>
-          <div class="menu-item">
+          <div class="menu-item" @click="openInitialPage">
             <div class="icon">@</div>
             <div class="label">Início</div>
           </div>
@@ -35,10 +35,20 @@
             <div class="icon">@</div>
             <div class="label">Compartilhar</div>
           </div>
+          <span class="link-share"></span>
         </div>
       </transition>
     </div>
     <nuxt id="stage-container" class="stage-container" />
+    <transition
+      enter-active-class="initial-enter"
+      leave-active-class="initial-leave"
+    >
+      <InitialPage
+        v-if="showInitialPage"
+        @close="closeInitialPage"
+      ></InitialPage>
+    </transition>
     <PopUpCreditos
       v-if="isVisibleCreditos"
       :is-showed="isVisibleCreditos"
@@ -59,6 +69,12 @@ export default {
   computed: {
     background() {
       return this.$store.state.currentBackground || 'bg-menu'
+    },
+    showInitialPage() {
+      return this.$store.state.initialPageState
+    },
+    linkShare() {
+      return window.location.href
     }
   },
   mounted() {
@@ -114,6 +130,13 @@ export default {
       } else if (document.msExitFullscreen) {
         document.msExitFullscreen()
       }
+    },
+    closeInitialPage() {
+      this.$store.commit('changeInitialPageState', false)
+    },
+    openInitialPage() {
+      this.isVisibleMenu = false
+      this.$store.commit('changeInitialPageState', true)
     }
   }
 }
@@ -159,7 +182,7 @@ export default {
     top: 0px;
     left: 60px;
     min-width: 250px;
-    min-height: 300px;
+    min-height: 340px;
     background-color: white;
     border: 3px solid $btn-border;
     border-radius: 0 $b-radius $b-radius $b-radius;

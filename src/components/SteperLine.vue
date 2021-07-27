@@ -104,16 +104,16 @@ export default {
     clickNext() {
       if (this.indexSteps < this.qntSteps) {
         this.indexSteps++
-        this.$emit('next', this.indexSteps)
+        this.$emit('next', this.indexSteps - 1)
       } else if (this.isLoop) {
         this.indexSteps = this.initialCompleted
-        this.$emit('next', this.indexSteps)
+        this.$emit('next', this.indexSteps - 1)
       } else this.$emit('finish')
     },
     clickPrev() {
       if (this.indexSteps > this.initialCompleted) {
         this.indexSteps--
-        this.$emit('back', this.indexSteps)
+        this.$emit('back', this.indexSteps - 1)
       } else this.$emit('start')
     }
   }
@@ -143,6 +143,7 @@ export default {
       // background-color: #ffd527;
       border: 6px solid white;
       border-right: none;
+      transition: 0.3s;
     }
     :last-child {
       border-radius: 0 50% 50% 0;
@@ -164,6 +165,7 @@ export default {
       width: 50px;
       height: 50px;
       background-color: red;
+      transition: 0.3s;
       opacity: 0.5;
       @include flex-center;
       &.actual {
