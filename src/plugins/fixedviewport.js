@@ -65,4 +65,4 @@ var FixedViewport
   FixedViewport.polyfill = polyfill
 })(FixedViewport || (FixedViewport = {}))
 
-FixedViewport.polyfill(1280, 720)
+FixedViewport.polyfill(1920, 1080)

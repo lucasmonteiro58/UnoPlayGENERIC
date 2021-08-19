@@ -1,10 +1,10 @@
 // Variables
 
 // WIDTH
-$canvas-width: 1280px;
-$canvas-height: 720px;
-$gap: 8px;
-$b-radius: 40px;
+$canvas-width: 1920px;
+$canvas-height: 1080px;
+$gap: 16px;
+$b-radius: 60px;
 $padding-canvas: 20px;
 
 //COLORS
@@ -12,6 +12,7 @@ $green: #8ea52d;
 $blue: #28a3d7;
 $grey: #505050;
 $white: #ffffff;
+$grey-lite: #e3e3e3;
 
 //Interface
 $border-color: $grey;
@@ -24,3 +25,5 @@ $card-background: $white;
 
 $bs-hard: 0px 6px 0px rgba(0, 0, 0, 0.3);
 $bs-hard-mini: 0px 3px 0px rgba(0, 0, 0, 0.3);
+
+$text-color: $grey;

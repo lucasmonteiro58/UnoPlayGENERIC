@@ -21,6 +21,30 @@
   /* Standard syntax */
 }
 
+@mixin font-neosans {
+  font-family: NeoSans;
+}
+
+@mixin font-neosans-bold {
+  font-weight: NeoSansBold;
+}
+
+@mixin font-neosans-medium {
+  font-family: NeoSansMedium;
+}
+
+@mixin font-neosans-balck {
+  font-family: NeoSansBlack;
+}
+
+@mixin font-neosans-light {
+  font-family: NeoSansLight;
+}
+
+@mixin font-bitter {
+  font-family: Bitter;
+}
+
 @mixin fill-canvas() {
   width: $canvas-width;
   height: $canvas-height;

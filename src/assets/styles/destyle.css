@@ -119,14 +119,43 @@ button:focus {
 }
 
 @font-face {
-  font-family: Confortaa;
-  src: url('../fonts/Comfortaa-VariableFont_wght.ttf');
+  font-family: NeoSans;
+  src: url('../fonts/NeoSansProRegular.otf');
+}
+
+@font-face {
+  font-family: NeoSansBold;
+  src: url('../fonts/NeoSansProBold.otf');
+}
+
+@font-face {
+  font-family: NeoSansBlack;
+  src: url('../fonts/NeoSansProBlack.otf');
+}
+
+@font-face {
+  font-family: NeoSansLight;
+  src: url('../fonts/NeoSansProLight.otf');
+}
+
+@font-face {
+  font-family: NeoSansMedium;
+  src: url('../fonts/NeoSansProMedium.otf');
+}
+
+@font-face {
+  font-family: Bitter;
+  src: url('../fonts/Bitter.ttf');
 }
 
 * {
-  font-family: Confortaa;
+  font-family: NeoSans;
+}
+
+.bi {
+  font-size: 2.5rem;
 }
 
 :root {
-  font-size: 14px;
+  font-size: 16px;
 }

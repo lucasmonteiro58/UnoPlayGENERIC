@@ -46,6 +46,7 @@ export default {
    */
   plugins: [
     { src: '~/plugins/components.js', ssr: false },
+    { src: '~/plugins/bootstrapIcons.js', ssr: false },
     { src: '~/plugins/localStorage.js', ssr: false },
     { src: '~/plugins/fixedviewport.js', ssr: false },
     { src: '~/plugins/preload.js', ssr: false }

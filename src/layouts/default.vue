@@ -20,22 +20,40 @@
         <div v-if="isVisibleMenu" class="menu-expand">
           <div class="menu-title">Menu</div>
           <div class="menu-item" @click="openInitialPage">
-            <div class="icon">@</div>
+            <div class="icon">
+              <BootstrapIcon icon="house" size="2x" class="trans4" />
+            </div>
             <div class="label">Início</div>
           </div>
           <div class="menu-item" @click="toogleFullScreen">
-            <div class="icon">@</div>
+            <div class="icon">
+              <BootstrapIcon
+                icon="arrows-fullscreen"
+                size="2x"
+                class="trans1"
+              />
+            </div>
             <div class="label">Tela cheia</div>
           </div>
           <div class="menu-item" @click="openCreditos">
-            <div class="icon">@</div>
+            <div class="icon">
+              <BootstrapIcon icon="people" size="2x" class="trans4" />
+            </div>
             <div class="label">Créditos</div>
           </div>
-          <div class="menu-item">
-            <div class="icon">@</div>
+          <div class="menu-item" @click="openShare">
+            <div class="icon">
+              <BootstrapIcon
+                icon="box-arrow-up-right"
+                size="2x"
+                class="trans2"
+              />
+            </div>
             <div class="label">Compartilhar</div>
+            <span v-if="isVisibleLinkShare" class="link-share">
+              {{ linkShare }}
+            </span>
           </div>
-          <span class="link-share"></span>
         </div>
       </transition>
     </div>
@@ -63,7 +81,8 @@ export default {
     return {
       isVisibleMenu: false,
       isFullScreen: false,
-      isVisibleCreditos: false
+      isVisibleCreditos: false,
+      isVisibleLinkShare: false
     }
   },
   computed: {
@@ -90,6 +109,10 @@ export default {
     toogleMenu() {
       this.isVisibleMenu = !this.isVisibleMenu
     },
+    openShare() {
+      this.isVisibleLinkShare = true
+    },
+    copyLinkShare() {},
     documentClick(e) {
       const el = this.$refs.dropdownMenu
       const target = e.target
@@ -180,16 +203,18 @@ export default {
   .menu-expand {
     position: absolute;
     top: 0px;
-    left: 60px;
-    min-width: 250px;
-    min-height: 340px;
+    left: 90px;
+    min-width: 509px;
+    min-height: 625px;
     background-color: white;
-    border: 3px solid $btn-border;
+    border: 5px solid $btn-border;
     border-radius: 0 $b-radius $b-radius $b-radius;
-    padding: $gap * 2;
+    padding: $gap * 1.4;
+    color: $text-color;
+    font-size: 1.875rem;
 
     .menu-title {
-      height: 45px;
+      height: 90px;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       padding: 0 $gap;
     }
@@ -197,12 +222,27 @@ export default {
     .menu-item {
       display: flex;
       align-items: center;
-      height: 40px;
+      height: 75px;
       padding: 0 $gap;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       cursor: pointer;
+
+      position: relative;
       .icon {
         margin-right: $gap * 2;
+      }
+
+      .link-share {
+        font-size: 0.8rem;
+        background-color: $grey-lite;
+        padding: $gap * 1.2 $gap;
+        border-radius: $gap * 1.5;
+        color: $grey;
+        margin-top: 20px;
+        position: absolute;
+        top: 30px;
+        width: 100%;
+        margin-left: -$gap;
       }
     }
   }

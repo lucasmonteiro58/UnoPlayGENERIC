@@ -51,7 +51,7 @@ export function fromBottom(el, easing) {
 }
 
 export function fromTop(el, easing) {
-  return translateFrom(el, -2, easing)
+  return translateFrom(el, -3, easing)
 }
 
 export function toBottom(el, easing) {
