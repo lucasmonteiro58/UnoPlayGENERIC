@@ -2,10 +2,19 @@
   <div v-show="showed" class="pop-up">
     <div class="backdrop" @click="close"></div>
     <div class="content">
-      <button class="btn btn--icon" @click="close">x</button>
+      <button class="btn btn--icon" @click="close">
+        <BootstrapIcon icon="x-lg" size="2x" class="trans9" />
+      </button>
       <div class="title-popup">Créditos</div>
       <div class="infos">
-        <span v-for="(c, i) in aplicationCredits" :key="i" v-html="c"></span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste dolores
+        esse impedit libero, reprehenderit nesciunt facere. Eveniet, incidunt.
+        Maxime cupiditate quia doloribus praesentium cum incidunt accusantium
+        laboriosam consectetur illo laudantium. Lorem ipsum dolor, sit amet
+        consectetur adipisicing elit. Incidunt quasi, dolor unde id dolore,
+        expedita earum sequi fugiat quae consectetur veniam repellendus
+        perspiciatis cum velit ab officiis esse perferendis aperiam.
+        <!-- <span v-for="(c, i) in aplicationCredits" :key="i" v-html="c"></span> -->
       </div>
     </div>
   </div>
@@ -75,27 +84,29 @@ export default {
   }
 
   .content {
-    min-width: 500px;
-    min-height: 400px;
+    max-width: 800px;
+    min-height: 600px;
     background-color: white;
     border-radius: $b-radius;
     padding: $gap * 3;
     padding-top: $gap * 6;
     position: relative;
     .title-popup {
-      font-size: 1.4rem;
+      @include font-neosans-black;
+      font-size: 2.25rem;
       font-weight: bold;
       margin-bottom: $gap * 2;
     }
     .btn--icon {
       position: absolute;
-      top: 25px;
-      right: 25px;
+      top: 42px;
+      right: 42px;
     }
     .infos {
       width: 100%;
       height: 300px;
       overflow-y: auto;
+      font-size: 1.4rem;
       /deep/ p {
         padding: $gap 0;
         display: flex;

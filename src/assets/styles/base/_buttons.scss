@@ -34,15 +34,16 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: $gap * 2 $gap * 3;
+      padding: $gap * 1.8 $gap * 3;
       border-radius: $gap * 4;
       background-color: $btn-green;
-      border: 4px solid white;
+      border: 8px solid white;
       color: white;
       font-weight: bold;
       box-shadow: $bs-hard;
       text-transform: uppercase;
       text-align: center;
+      font-size: 1.875rem;
 
       .btn-icon {
         &.left {
@@ -80,5 +81,11 @@
   &[disabled] {
     opacity: 0.4;
     cursor: initial;
+  }
+}
+
+.btn-icon {
+  .bi {
+    filter: brightness(120);
   }
 }

@@ -1,11 +1,13 @@
 <template>
   <div class="steper-line-section">
     <button
-      class="btn btn--primary fixed-width w170"
+      class="btn btn--primary fixed-width w375"
       :disabled="disabledPrev"
       @click="clickPrev"
     >
-      <div class="btn-icon left">--</div>
+      <div class="btn-icon left">
+        <BootstrapIcon icon="arrow-left" size="2x" class="trans4" />
+      </div>
       Anterior
     </button>
     <div class="line-section">
@@ -33,14 +35,16 @@
     </div>
     <button
       v-if="isFinish"
-      class="btn btn--primary fixed-width w170"
+      class="btn btn--primary fixed-width w375"
       @click="clickNext"
     >
       {{ finishMsg }}
     </button>
-    <button v-else class="btn btn--primary fixed-width w170" @click="clickNext">
+    <button v-else class="btn btn--primary fixed-width w375" @click="clickNext">
       Próximo
-      <div class="btn-icon right">--</div>
+      <div class="btn-icon right">
+        <BootstrapIcon icon="arrow-right" size="2x" class="trans4" />
+      </div>
     </button>
   </div>
 </template>
@@ -129,7 +133,7 @@ export default {
   width: 100%;
 
   .btn--primary {
-    height: 54px;
+    height: 100px;
   }
 }
 .line-section {
@@ -138,27 +142,27 @@ export default {
   .line-box {
     @include flex-center;
     .line-step {
-      width: 80px;
-      height: 40px;
+      width: 120px;
+      height: 60px;
       // background-color: #ffd527;
       border: 6px solid white;
       border-right: none;
       transition: 0.3s;
     }
     :last-child {
-      border-radius: 0 50% 50% 0;
+      border-radius: 0 30px 30px 0;
       border-right: 6px solid white;
-      width: 50px;
+      width: 100px;
     }
     :first-child {
-      border-radius: 50% 0 0 50%;
-      width: 50px;
+      border-radius: 30px 0 0 30px;
+      width: 100px;
     }
   }
 
   .image-section {
     display: flex;
-    width: 580px;
+    width: 865px; //alterar
     justify-content: space-between;
     margin-bottom: $gap * 2;
     .images-box {

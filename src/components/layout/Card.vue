@@ -34,22 +34,27 @@ export default {
 
   .card-image {
     @include flex-center;
-    width: 350px;
+    width: 580px;
 
     .image {
-      width: 300px;
-      height: 200px;
+      width: 550px;
+      height: 400px;
       background-color: red;
     }
   }
 
   .card-content {
-    width: 380px;
+    width: 600px;
     margin-top: 60px;
     .title {
-      font-size: 1.4rem;
+      @include font-neosans-black;
+      font-size: 2.25rem;
       font-weight: 900;
       margin-bottom: $gap;
+    }
+
+    .text {
+      font-size: 1.5rem;
     }
   }
 }

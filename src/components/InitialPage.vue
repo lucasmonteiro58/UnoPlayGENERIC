@@ -9,7 +9,9 @@
     >
       {{ textButton }}
 
-      <div class="btn-icon right">-></div>
+      <div class="btn-icon right">
+        <BootstrapIcon icon="arrow-right" size="2x" class="trans4" />
+      </div>
     </button>
   </div>
 </template>
@@ -36,7 +38,7 @@ export default {
     },
     leftButton: {
       type: Number,
-      default: 547
+      default: 802
     }
   },
   data() {
@@ -103,6 +105,7 @@ export default {
 
   .btn-comecar {
     position: absolute;
+    color: white;
   }
 }
 </style>
