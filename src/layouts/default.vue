@@ -50,8 +50,14 @@
               />
             </div>
             <div class="label">Compartilhar</div>
-            <span v-if="isVisibleLinkShare" class="link-share">
-              {{ linkShare }}
+            <span
+              v-if="isVisibleLinkShare"
+              v-clipboard:copy="linkShare"
+              class="link-share"
+            >
+              <BootstrapIcon icon="link-45deg" size="md" />
+              <div class="link">{{ linkShare }}</div>
+              <BootstrapIcon icon="files" size="md" class="trans2 align-self" />
             </span>
           </div>
         </div>
@@ -105,12 +111,13 @@ export default {
   methods: {
     closeMenu() {
       this.isVisibleMenu = false
+      this.isVisibleLinkShare = false
     },
     toogleMenu() {
       this.isVisibleMenu = !this.isVisibleMenu
     },
     openShare() {
-      this.isVisibleLinkShare = true
+      this.isVisibleLinkShare = !this.isVisibleLinkShare
     },
     copyLinkShare() {},
     documentClick(e) {
@@ -233,16 +240,26 @@ export default {
       }
 
       .link-share {
-        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        font-size: 1.3rem;
         background-color: $grey-lite;
-        padding: $gap * 1.2 $gap;
+        padding: $gap $gap * 1.7;
         border-radius: $gap * 1.5;
-        color: $grey;
         margin-top: 20px;
         position: absolute;
-        top: 30px;
+        top: 70px;
         width: 100%;
         margin-left: -$gap;
+
+        .link {
+          margin-left: 8px;
+          color: #696969;
+        }
+
+        .align-self {
+          margin-left: auto;
+        }
       }
     }
   }
