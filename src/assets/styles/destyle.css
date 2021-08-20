@@ -160,3 +160,22 @@ button:focus {
 :root {
   font-size: 16px;
 }
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #dadada #838383;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #dadada;
+  border-radius: 20px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #9b9b9b;
+  border-radius: 20px;
+}

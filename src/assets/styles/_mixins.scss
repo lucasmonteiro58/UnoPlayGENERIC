@@ -87,3 +87,15 @@
     -#{$size_y} -#{$size_y} 0 $color, $size_y -$size_y 0 $color,
     -#{$size_y} $size_y 0 $color, $size_y $size_y $size_z $color;
 }
+
+@mixin scroll-track() {
+  background: #dadada;
+  margin-top: 55px;
+  margin-bottom: 55px;
+  border-radius: 20px;
+}
+
+@mixin scroll-thumb() {
+  background-color: #9b9b9b;
+  border-radius: 20px;
+}
