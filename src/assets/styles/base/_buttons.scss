@@ -18,6 +18,10 @@
         border-radius: 50%;
       }
 
+      &.border-white {
+        border: 5px solid white;
+      }
+
       &.green {
         background-color: $btn-green;
         &:hover {
