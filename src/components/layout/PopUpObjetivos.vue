@@ -1,8 +1,10 @@
 <template>
   <div v-show="showed" class="pop-up">
-    <div class="backdrop" @click="close"></div>
+    <div class="backdrop" @click="hide"></div>
     <div class="content">
-      <button class="btn btn--icon" @click="close">x</button>
+      <button class="btn btn--icon" @click="hide">
+        <BootstrapIcon icon="x-lg" size="2x" class="trans9" />
+      </button>
       <div class="box-objetivos">
         <div class="title-objetivos">{{ currentTitle }}</div>
         <div class="content-objetivos" v-html="currentContent"></div>
@@ -13,7 +15,7 @@
         enable-close
         @back="back"
         @next="next"
-        @close="closeStep"
+        @close="close"
       ></StepController>
     </div>
   </div>
@@ -67,11 +69,11 @@ export default {
     showAnimation() {
       fromTop(this.$el.lastChild)
     },
+    hide() {
+      this.$emit('hide')
+    },
     close() {
       this.$emit('close')
-    },
-    closeStep() {
-      this.$emit('next')
     },
     back() {
       this.index--
@@ -101,40 +103,47 @@ export default {
   }
 
   .content {
-    min-width: 450px;
-    min-height: 350px;
+    width: 800px;
+    min-height: 600px;
     background-color: white;
     border-radius: $b-radius;
     padding: $gap * 3;
     padding-top: $gap * 6;
     position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     .btn--icon {
       position: absolute;
-      top: 25px;
-      right: 25px;
+      top: 35px;
+      right: 44px;
     }
     .box-objetivos {
       @include flex-center;
       flex-direction: column;
-      width: 450px;
+      width: 600px;
       height: 220px;
       padding-top: $gap * 2;
       text-align: center;
 
       .title-objetivos {
+        @include font-neosans-black;
         text-align: center;
         margin-bottom: $gap;
-        font-size: 1.3rem;
+        font-size: 2.25rem;
         font-weight: bold;
       }
       .content-objetivos {
         /deep/ p {
+          font-size: 1.5rem;
           padding-bottom: $gap;
         }
       }
     }
     .steps {
       justify-content: center;
+      position: absolute;
+      bottom: 30px;
     }
   }
 }

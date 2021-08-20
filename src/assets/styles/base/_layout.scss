@@ -12,6 +12,10 @@ body {
   width: 375px;
 }
 
+.color-white {
+  filter: brightness(200);
+}
+
 .trans1 {
   transform: scale(1.1);
 }

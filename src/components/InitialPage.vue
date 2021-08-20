@@ -13,6 +13,12 @@
         <BootstrapIcon icon="arrow-right" size="2x" class="trans4" />
       </div>
     </button>
+    <PopUpObjetivos
+      v-if="isShowedObjetivos"
+      :is-showed="isShowedObjetivos"
+      @close="closeObjetivos"
+      @hide="hideObjetivos"
+    ></PopUpObjetivos>
   </div>
 </template>
 
@@ -43,7 +49,8 @@ export default {
   },
   data() {
     return {
-      showed: false
+      showed: false,
+      isShowedObjetivos: false
     }
   },
   computed: {
@@ -76,7 +83,17 @@ export default {
       fadeOut(this.$el)
     },
     clickButton() {
+      this.openObjetivos()
+    },
+    closeObjetivos() {
       this.$emit('close')
+      this.isShowedObjetivos = false
+    },
+    openObjetivos() {
+      this.isShowedObjetivos = true
+    },
+    hideObjetivos() {
+      this.isShowedObjetivos = false
     }
   }
 }

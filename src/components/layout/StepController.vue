@@ -4,21 +4,27 @@
       class="btn btn--borded circle"
       :disabled="index === 0"
       @click="clickPrev"
-    ></button>
+    >
+      <BootstrapIcon icon="arrow-left" size="2x" class="trans3" />
+    </button>
     <div class="display" :style="displayStyle">
       {{ index + 1 }} / {{ contentLength }}
     </div>
     <button
       v-if="showConfirm"
-      class="btn btn--borded circle green"
+      class="btn btn--borded circle green border-white"
       @click="clickNext"
-    ></button>
+    >
+      <BootstrapIcon icon="check" size="2x" class="trans6 color-white" />
+    </button>
     <button
       v-else
       class="btn btn--borded circle"
       :disabled="disableNext"
       @click="clickNext"
-    ></button>
+    >
+      <BootstrapIcon icon="arrow-right" size="2x" class="trans3" />
+    </button>
   </div>
 </template>
 
