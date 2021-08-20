@@ -2,6 +2,33 @@ body {
   @include sprites($spritesheet-sprites);
 }
 
+.infos-top-layout {
+  .title-top {
+    @include font-bitter;
+    position: absolute;
+    top: 38px;
+    right: $gap * 2;
+    font-weight: bold;
+    font-size: 1.875rem;
+    color: $brown-dark;
+    background-color: $brown-light;
+    padding: 0 $gap/2;
+    border-radius: 20px;
+  }
+
+  .subtitle-top {
+    @include font-neosans-medium;
+    width: 472px;
+    font-size: 1.25rem;
+    position: absolute;
+    top: 96px;
+    right: $gap * 2;
+    line-height: 24px;
+    text-align: right;
+    letter-spacing: -0.02em;
+  }
+}
+
 // ---- class auxiliares
 
 .w170 {
