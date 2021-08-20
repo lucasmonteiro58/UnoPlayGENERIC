@@ -11,6 +11,7 @@
       :card-index="cardIndex"
     ></CardAnimation>
     <SteperLine class="steper" @next="nextClick" @back="backClick"></SteperLine>
+    <ZoomImage class="zoom-image" :image="''"></ZoomImage>
   </section>
 </template>
 <script>
@@ -48,6 +49,11 @@ export default {
   .steper {
     position: absolute;
     bottom: 40px;
+  }
+
+  .zoom-image {
+    position: absolute;
+    z-index: 1;
   }
 }
 </style>

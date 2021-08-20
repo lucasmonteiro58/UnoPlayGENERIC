@@ -5,6 +5,8 @@ import PopUpCreditos from '@/components/layout/PopUpCreditos.vue'
 import SteperLine from '@/components/SteperLine.vue'
 import Card from '@/components/layout/Card.vue'
 import CardAnimation from '@/components/layout/CardAnimation.vue'
+import ImageFull from '@/components/layout/ImageFull.vue'
+import ZoomImage from '@/components/ZoomImage.vue'
 
 const Components = {
   install: (Vue) => {
@@ -15,6 +17,8 @@ const Components = {
     Vue.component('SteperLine', SteperLine)
     Vue.component('Card', Card)
     Vue.component('CardAnimation', CardAnimation)
+    Vue.component('ZoomImage', ZoomImage)
+    Vue.component('ImageFull', ImageFull)
   }
 }
 

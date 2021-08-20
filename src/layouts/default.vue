@@ -78,6 +78,7 @@
       :is-showed="isVisibleCreditos"
       @close="closeCreditos"
     ></PopUpCreditos>
+    <ImageFull v-if="isVisibleImageFull"></ImageFull>
   </div>
 </template>
 
@@ -100,6 +101,9 @@ export default {
     },
     linkShare() {
       return window.location.href
+    },
+    isVisibleImageFull() {
+      return this.$store.state.imageFullOpen
     }
   },
   mounted() {
