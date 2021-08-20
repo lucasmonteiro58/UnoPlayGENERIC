@@ -149,6 +149,11 @@ button:focus {
   src: url('../fonts/Bitter.ttf');
 }
 
+@font-face {
+  font-family: Oxanium;
+  src: url('../fonts/Oxanium.ttf');
+}
+
 * {
   font-family: NeoSans;
   color: #505050;

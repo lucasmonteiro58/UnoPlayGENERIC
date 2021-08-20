@@ -45,6 +45,10 @@
   font-family: Bitter;
 }
 
+@mixin font-oxanium {
+  font-family: Oxanium;
+}
+
 @mixin fill-canvas() {
   width: $canvas-width;
   height: $canvas-height;
