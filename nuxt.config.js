@@ -3,6 +3,7 @@ import spriteLogic from './src/assets/spritesmith.js'
 
 export default {
   ssr: false,
+  target: 'static',
   /*
    ** Headers of the page
    */
