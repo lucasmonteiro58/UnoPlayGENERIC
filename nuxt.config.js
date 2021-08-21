@@ -9,6 +9,9 @@ export default {
    */
   head: {
     title: 'Game',
+    htmlAttrs: {
+      lang: 'pt-BR'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=1440, user-scalable=yes' },
