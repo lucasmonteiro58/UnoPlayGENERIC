@@ -17,6 +17,7 @@
           :key="index"
           class="images-box"
           :class="{ actual: index + 1 === indexSteps }"
+          @click="clickImage(index)"
         >
           <div class="img"></div>
         </div>
@@ -119,6 +120,10 @@ export default {
         this.indexSteps--
         this.$emit('back', this.indexSteps - 1)
       } else this.$emit('start')
+    },
+    clickImage(i) {
+      this.indexSteps = i + 1
+      this.$emit('changed', i)
     }
   }
 }
@@ -172,6 +177,10 @@ export default {
       transition: 0.3s;
       opacity: 0.5;
       @include flex-center;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.1);
+      }
       &.actual {
         opacity: 1;
       }

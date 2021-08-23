@@ -10,7 +10,12 @@
       :card-content="cards"
       :card-index="cardIndex"
     ></CardAnimation>
-    <SteperLine class="steper" @next="nextClick" @back="backClick"></SteperLine>
+    <SteperLine
+      class="steper"
+      @next="nextClick"
+      @back="backClick"
+      @changed="changeClick"
+    ></SteperLine>
     <ZoomImage class="zoom-image" :image="''"></ZoomImage>
   </section>
 </template>
@@ -36,6 +41,9 @@ export default {
       this.cardIndex = i
     },
     backClick(i) {
+      this.cardIndex = i
+    },
+    changeClick(i) {
       this.cardIndex = i
     }
   }
