@@ -79,17 +79,25 @@
       @close="closeCreditos"
     ></PopUpCreditos>
     <ImageFull v-if="isVisibleImageFull"></ImageFull>
+    <PopUpOrientation
+      v-if="isPortrait && !showInitialPage"
+      :is-showed="isPortrait && !showInitialPage"
+      @close="closeOrientation"
+    ></PopUpOrientation>
   </div>
 </template>
 
 <script>
+import { MobileOrientation } from 'mobile-orientation'
 export default {
   data() {
     return {
       isVisibleMenu: false,
       isFullScreen: false,
       isVisibleCreditos: false,
-      isVisibleLinkShare: false
+      isVisibleLinkShare: false,
+      isPortrait: false,
+      orientation: new MobileOrientation()
     }
   },
   computed: {
@@ -107,12 +115,24 @@ export default {
     }
   },
   mounted() {
+    this.orientation.on('resize', () => {
+      this.changeOrientation()
+    })
     document.addEventListener('click', this.documentClick)
   },
   beforeDestroy() {
     document.removeEventListener('click', this.documentClick())
   },
   methods: {
+    changeOrientation() {
+      this.isPortrait = window.matchMedia('(orientation: portrait)').matches
+    },
+    closeOrientation() {
+      this.isPortrait = false
+      setTimeout(() => {
+        this.isPortrait = window.matchMedia('(orientation: portrait)').matches
+      }, 1500)
+    },
     closeMenu() {
       this.isVisibleMenu = false
       this.isVisibleLinkShare = false

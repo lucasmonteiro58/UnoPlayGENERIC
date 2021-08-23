@@ -14,14 +14,15 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "core-js": "^3.15.1",
     "@dvuckovic/vue-bootstrap-icons": "^1.0.8",
     "@nuxtjs/eslint-module": "^3.0.1",
     "@nuxtjs/style-resources": "^1.0.0",
     "@vueuse/sound": "^1.1.7",
     "animejs": "^3.2.1",
+    "core-js": "^3.15.1",
     "file-loader": "^6.1.0",
     "interactjs": "^1.10.2",
+    "mobile-orientation": "^2.1.2",
     "nuxt": "^2.14.12",
     "preload-image-loader": "^1.0.0",
     "url-loader": "^2.2.0",

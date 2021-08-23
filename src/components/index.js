@@ -8,6 +8,8 @@ import CardAnimation from '@/components/layout/CardAnimation.vue'
 import ImageFull from '@/components/layout/ImageFull.vue'
 import ZoomImage from '@/components/ZoomImage.vue'
 
+import PopUpOrientation from '@/components/PopUpOrientation.vue'
+
 const Components = {
   install: (Vue) => {
     Vue.component('LoadingScreen', LoadingScreen)
@@ -19,6 +21,7 @@ const Components = {
     Vue.component('CardAnimation', CardAnimation)
     Vue.component('ZoomImage', ZoomImage)
     Vue.component('ImageFull', ImageFull)
+    Vue.component('PopUpOrientation', PopUpOrientation)
   }
 }
 
